@@ -4,8 +4,9 @@ import { SiShopware } from "react-icons/si";
 import { ImCancelCircle } from "react-icons/im";
 import { Tooltip } from "@mui/material";
 import { links } from "../data/dummy";
+import { useStateContext } from "../contexts/ContextProvider";
 const Sidebar = () => {
-  const activeMenu = true;
+  const { activeMenu, setActiveMenu } = useStateContext();
   const activeLink =
     "flex items-center gap-4 pl-4 pt-3 pb-2.5 rounded-lg  text-md m-3 bg-light-gray";
   const normalLink =
@@ -32,7 +33,7 @@ const Sidebar = () => {
             <Tooltip title="Закрыть" placement="bottom">
               <button
                 type="button"
-                onClick={() => {}}
+                onClick={() => setActiveMenu(!activeMenu)}
                 className="text-2xl mr-3 mt-4 md:hidden"
               >
                 <ImCancelCircle />
