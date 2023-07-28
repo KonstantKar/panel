@@ -6,7 +6,14 @@ import { Tooltip } from "@mui/material";
 import { links } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, screenSize } = useStateContext();
+  //В случае маленького экрана после таба на раздел меню будет закрываться
+  const handleCloseSideBar = () => {
+    if (activeMenu && screenSize <= 900) {
+      setActiveMenu(false);
+    }
+  };
+
   const activeLink =
     "flex items-center gap-4 pl-4 pt-3 pb-2.5 rounded-lg  text-md m-3 bg-light-gray";
   const normalLink =
@@ -33,7 +40,7 @@ const Sidebar = () => {
             <Tooltip title="Закрыть" placement="bottom">
               <button
                 type="button"
-                onClick={() => setActiveMenu(!activeMenu)}
+                onClick={handleCloseSideBar}
                 className="text-2xl mr-3 mt-4 md:hidden"
               >
                 <ImCancelCircle />
@@ -53,6 +60,7 @@ const Sidebar = () => {
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
+                    onClick={handleCloseSideBar}
                   >
                     {linkItem.icon}
                     <span>{linkItem.name}</span>
