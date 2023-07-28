@@ -3,9 +3,26 @@ import "./App.css";
 import { Tooltip } from "@mui/material";
 import { Settings } from "@mui/icons-material";
 import { FiSettings } from "react-icons/fi";
-
+//Мы можем импортировать в одну строку благодаря index.jsx в файле "./components";
+import { Navbar, Footer, Sidebar, TimeSettings } from "./components";
+import {
+  Ecommerce,
+  Orders,
+  Calendar,
+  Employees,
+  Stacked,
+  Pyramid,
+  Kanban,
+  Area,
+  Bar,
+  Pie,
+  Financial,
+  ColorPicker,
+  ColorMapping,
+  Editor,
+} from "./pages";
 function App() {
-  const activeMenu = false;
+  const activeMenu = true;
   return (
     <BrowserRouter>
       <div className="flex relative dark:bg-main-dark-bg">
@@ -30,7 +47,7 @@ function App() {
             dark:bg-secondary-dark-bg
             bg-white"
           >
-            Sidebar
+            <Sidebar />
           </div>
         ) : (
           <div
@@ -51,25 +68,24 @@ function App() {
 
         <div>
           <Routes>
-            {/*Dashboard*/}
-            <Route path="/ " element="Commerce" />
-            <Route path="/commerce " element="Commerce" />
+            <Route path="/ " element={<Commerce />} />
+            <Route path="/commerce " element={<Commerce />} />
             {/*Pages*/}
-            <Route path="/orders " element="Orders" />
-            <Route path="/employees " element="Employees" />
-            <Route path="/customers " element="Customers" />
+            <Route path="/orders " element={<Orders />} />
+            <Route path="/employees " element={<Employees />} />
+            <Route path="/customers " element={<Customers />} />
             {/*Apps*/}
-            <Route path="/kanban " element="Kanban" />
-            <Route path="/editor " element="Editor" />
-            <Route path="/calendar " element="Calendar" />
-            <Route path="/colpicker " element="Colpicker" />
+            <Route path="/kanban " element={<Kanban />} />
+            <Route path="/editor " element={<Editor />} />
+            <Route path="/calendar " element={<Calendar />} />
+            <Route path="/colpicker " element={<Colpicker />} />
             {/*Charts*/}
-            <Route path="/line" element="Line" />
-            <Route path="/area " element="Area" />
-            <Route path="/bar " element="Bar" />
-            <Route path="/pie " element="Pie" />
-            <Route path="/financial " element="Financial" />
-            <Route path="/colMapping " element="Colmapping" />
+            <Route path="/line" element={<Line />} />
+            <Route path="/area " element={<Area />} />
+            <Route path="/bar " element={<Bar />} />
+            <Route path="/pie " element={<Pie />} />
+            <Route path="/financial " element={<Financial />} />
+            <Route path="/colMapping " element={<Colmapping />} />
           </Routes>
         </div>
       </div>
