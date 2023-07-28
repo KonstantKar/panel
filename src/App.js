@@ -68,11 +68,10 @@ function App() {
             <Navbar />
           </div>
         </div>
-
         <div>
           <Routes>
             <Route path="/ " element={<Ecommerce />} />
-            <Route path="/commerce " element={<Ecommerce />} />
+            <Route path="/ecommerce " element={<Ecommerce />} />
             {/*Pages*/}
             <Route path="/orders " element={<Orders />} />
             <Route path="/employees " element={<Employees />} />
