@@ -88,6 +88,8 @@ function App() {
             <Route path="/pie " element={<Pie />} />
             <Route path="/financial " element={<Financial />} />
             <Route path="/colMapping " element={<ColorMapping />} />
+            <Route path="/stacked " element={<Stacked />} />
+            <Route path="/pyramid " element={<Pyramid />} />
           </Routes>
         </div>
       </div>

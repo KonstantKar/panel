@@ -7,7 +7,7 @@ import { BsChatLeft } from "react-icons/bs";
 import { RiNotification3Line } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { Avatar, Tooltip } from "@mui/material";
-import { Cart, Chat, Notification, UserProfile } from ".";
+import { Cart, Chat, Notification, UserProfile } from "../components";
 
 const NavButton = ({ title, customFunc, icon, color }) => (
   <Tooltip title={title}>
@@ -23,7 +23,8 @@ const NavButton = ({ title, customFunc, icon, color }) => (
 );
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick } =
+    useStateContext();
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
       <NavButton
@@ -35,19 +36,33 @@ const Navbar = () => {
       <div className="flex">
         <NavButton
           title="Корзина"
-          customFunc={() => {}}
+          customFunc={() => {
+            handleClick("cart");
+          }}
           color="blue"
           icon={<BsCart3 />}
         ></NavButton>
         <NavButton
+          title="Уведомления"
+          customFunc={() => {
+            handleClick("notifications");
+          }}
+          color="blue"
+          icon={<RiNotification3Line />}
+        ></NavButton>
+        <NavButton
           title="Сообщения"
-          customFunc={() => {}}
+          customFunc={() => {
+            handleClick("chat");
+          }}
           color="blue"
           icon={<BsChatLeft />}
         ></NavButton>
         <Tooltip
           title="Профиль"
-          onClick={() => {}}
+          onClick={() => {
+            handleClick("userProfile");
+          }}
           className="flex items-center"
         >
           <Avatar
@@ -60,6 +75,11 @@ const Navbar = () => {
           </p>
           <MdKeyboardArrowDown className="text-gray-600 text-14 font-bold" />
         </Tooltip>
+        {/* Отображаем те или иные окна в зависимости от значения передаваемого в контексте */}
+        {isClicked.card && <Cart />}
+        {isClicked.chat && <Chat />}
+        {isClicked.notification && <Notification />}
+        {isClicked.userProfile && <UserProfile />}
       </div>
     </div>
   );
