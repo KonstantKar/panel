@@ -60,7 +60,7 @@ function App() {
             ></div>
           )}
           <div
-            className={`dark:bg-main-bg bg-main-bg  min-h-screen w-full ${
+            className={`dark:bg-main-bg bg-main-bg  w-full ${
               activeMenu ? " md:ml-72" : " flex-2"
             }`}
           >

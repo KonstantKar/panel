@@ -40,7 +40,7 @@ const Ecommerce = () => {
             {earningData.map((card) => (
               <div
                 key={card.title}
-                className="bg-white dark:text-gray-200
+                className="bg-main-bg dark:text-gray-200
                dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-2xl ;"
               >
                 <button
@@ -66,7 +66,7 @@ const Ecommerce = () => {
           </div>
           {/*Начало отдела с ростом выручки*/}
           <div className="flex gap-10 flex-wrap justify-center">
-            <div className="bg-white dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
+            <div className="bg-main-bg dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
               <div className="flex flex-col">
                 <p className="font-semibold text-xl flex gap-2 mb-6">
                   Рост доходов <AiOutlineArrowUp color="green" />
@@ -74,7 +74,7 @@ const Ecommerce = () => {
                 <AreaChart />
               </div>
             </div>
-            <div className="bg-white dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
+            <div className="bg-main-bg dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
               <div className="flex flex-col">
                 <p className="font-semibold text-xl flex gap-2 ">
                   График полезности
@@ -82,7 +82,7 @@ const Ecommerce = () => {
                 <PieChart />
               </div>
             </div>
-            <div className="bg-white dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
+            <div className="bg-main-bg dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
               <div className="flex flex-col">
                 <p className="font-semibold text-xl flex gap-2 ">
                   Сравнение с прошлым годом
