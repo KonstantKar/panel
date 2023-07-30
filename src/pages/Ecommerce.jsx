@@ -2,9 +2,16 @@ import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import { Stacked, GoPencil, Button, SparkLine, AreaChart } from "../components";
+import {
+  Stacked,
+  GoPencil,
+  Button,
+  SparkLine,
+  AreaChart,
+  PieChart,
+  VerticalChart,
+} from "../components";
 import { earningData, sparkLineData, ecomPieChartData } from "../data/dummy";
-import BG from "../data/welcome-bg.svg";
 import { Divider } from "@mui/material";
 
 const Ecommerce = () => {
@@ -12,7 +19,7 @@ const Ecommerce = () => {
     // Начало доходов и 4 карточек
     <div className="mt-24 ">
       <div className="flex flex-wrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center ">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full p-8 pt-9 m-3 bg-bgIm bg-no-repeat bg-cover bg-center ">
           <div className="flex flex-col justify-between items-center mb-10 ">
             <div>
               <p className="font-bold text-gray-400">Доходы</p>
@@ -61,7 +68,7 @@ const Ecommerce = () => {
           <div className="flex gap-10 flex-wrap justify-center">
             <div className="bg-white dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
               <div className="flex flex-col">
-                <p className="font-semibold text-xl flex gap-2">
+                <p className="font-semibold text-xl flex gap-2 mb-6">
                   Рост доходов <AiOutlineArrowUp color="green" />
                 </p>
                 <AreaChart />
@@ -69,10 +76,18 @@ const Ecommerce = () => {
             </div>
             <div className="bg-white dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
               <div className="flex flex-col">
-                <p className="font-semibold text-xl flex gap-2">
-                  Рост доходов <AiOutlineArrowUp color="green" />
+                <p className="font-semibold text-xl flex gap-2 ">
+                  График полезности
                 </p>
-                <AreaChart />
+                <PieChart />
+              </div>
+            </div>
+            <div className="bg-white dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
+              <div className="flex flex-col">
+                <p className="font-semibold text-xl flex gap-2 ">
+                  Сравнение с прошлым годом
+                </p>
+                <VerticalChart />
               </div>
             </div>
           </div>

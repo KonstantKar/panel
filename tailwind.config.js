@@ -40,7 +40,7 @@ module.exports = {
         590: "590px",
       },
       backgroundImage: {
-        "hero-pattern": "url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png')",
+        bgIm: "url(https://phonoteka.org/uploads/posts/2021-05/1620119976_50-phonoteka_org-p-fon-dlya-nabora-teksta-62.jpg)",
       },
     },
   },

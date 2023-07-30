@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { SiShopware } from "react-icons/si";
+import { BiLogoGraphql } from "react-icons/bi";
 import { ImCancelCircle } from "react-icons/im";
 import { Tooltip } from "@mui/material";
 import { links } from "../data/dummy";
@@ -35,7 +35,7 @@ const Sidebar = () => {
               onClick={() => {}}
               className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold "
             >
-              <SiShopware className="text-3xl" /> <span>Shoppy</span>
+              <BiLogoGraphql className="text-3xl" /> <span>Посчитай-КА!</span>
             </Link>
             <Tooltip title="Закрыть" placement="bottom">
               <button
