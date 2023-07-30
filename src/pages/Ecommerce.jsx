@@ -2,7 +2,7 @@ import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import { Stacked, GoPencil, Button, SparkLine } from "../components";
+import { Stacked, GoPencil, Button, SparkLine, AreaChart } from "../components";
 import { earningData, sparkLineData, ecomPieChartData } from "../data/dummy";
 import BG from "../data/welcome-bg.svg";
 import { Divider } from "@mui/material";
@@ -28,6 +28,7 @@ const Ecommerce = () => {
               ></Button>
             </div>
           </div>
+          {/*Информация на карточках*/}
           <div className="flex m-3 flex-wrap justify-center gap-4 items-center">
             {earningData.map((card) => (
               <div
@@ -58,14 +59,21 @@ const Ecommerce = () => {
           </div>
           {/*Начало отдела с ростом выручки*/}
           <div className="flex gap-10 flex-wrap justify-center">
-            <div className="bg-white dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  md:w-780  ">
+            <div className="bg-white dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
               <div className="flex flex-col">
                 <p className="font-semibold text-xl flex gap-2">
                   Рост доходов <AiOutlineArrowUp color="green" />
                 </p>
-                <canvas id="myChart" className="w-50 bg-black"></canvas>
+                <AreaChart />
               </div>
-              <div className="mt-10 flex  gap-20 flex-wrap justify-center"></div>
+            </div>
+            <div className="bg-white dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
+              <div className="flex flex-col">
+                <p className="font-semibold text-xl flex gap-2">
+                  Рост доходов <AiOutlineArrowUp color="green" />
+                </p>
+                <AreaChart />
+              </div>
             </div>
           </div>
         </div>
