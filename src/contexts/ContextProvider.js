@@ -6,7 +6,7 @@ const initialState = {
   chat: false,
   cart: false,
   userProfile: false,
-  Notification: false,
+  notification: false,
 };
 
 export const ContextProvider = ({ children }) => {
@@ -28,8 +28,11 @@ export const ContextProvider = ({ children }) => {
 
   //В зависимости от того, на что кликаешь, состояние того свойства и меняется
   const handleClick = (clicked) => {
-    console.log(clicked);
     setIsClicked({ ...initialState, [clicked]: true });
+  };
+
+  const handleClickOff = (clicked) => {
+    setIsClicked({ ...initialState, [clicked]: false });
   };
 
   return (
@@ -42,6 +45,7 @@ export const ContextProvider = ({ children }) => {
         setActiveSettings,
         setColor,
         setMode,
+        handleClickOff,
         activeMenu,
         isClicked,
         screenSize,

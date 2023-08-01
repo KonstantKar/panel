@@ -15,7 +15,7 @@ const NavButton = ({ title, customFunc, icon, color }) => (
       type="button"
       onClick={customFunc}
       style={{ color: color }}
-      className="relative text-xl rounded-full p-3 hover:bg-light-gray"
+      className="relative text-xl rounded-full p-3 hover:bg-light-gray dark:hover:bg-secondary-dark-bg"
     >
       {icon}
     </button>
@@ -71,7 +71,7 @@ const Navbar = () => {
         <NavButton
           title="Уведомления"
           customFunc={() => {
-            handleClick("notifications");
+            handleClick("notification");
           }}
           color={currentColor}
           icon={<RiNotification3Line />}
@@ -102,7 +102,7 @@ const Navbar = () => {
           <MdKeyboardArrowDown className="text-gray-600 text-14 font-bold" />
         </Tooltip>
         {/* Отображаем те или иные окна в зависимости от значения передаваемого в контексте */}
-        {isClicked.card && <Cart />}
+        {isClicked.cart && <Cart />}
         {isClicked.chat && <Chat />}
         {isClicked.notification && <Notification />}
         {isClicked.userProfile && <UserProfile />}
