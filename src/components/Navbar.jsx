@@ -31,6 +31,8 @@ const Navbar = () => {
     handleClick,
     screenSize,
     setScreenSize,
+    setActiveSettings,
+    currentColor,
   } = useStateContext();
 
   useEffect(() => {
@@ -43,6 +45,7 @@ const Navbar = () => {
   useEffect(() => {
     if (screenSize <= 1400) {
       setActiveMenu(false);
+      setActiveSettings(false);
     } else {
       setActiveMenu(true);
     }
@@ -53,7 +56,7 @@ const Navbar = () => {
       <NavButton
         title="Меню"
         customFunc={() => setActiveMenu(!activeMenu)}
-        color="blue"
+        color={currentColor}
         icon={<RxHamburgerMenu />}
       ></NavButton>
       <div className="flex">
@@ -62,7 +65,7 @@ const Navbar = () => {
           customFunc={() => {
             handleClick("cart");
           }}
-          color="blue"
+          color={currentColor}
           icon={<BsCart3 />}
         ></NavButton>
         <NavButton
@@ -70,7 +73,7 @@ const Navbar = () => {
           customFunc={() => {
             handleClick("notifications");
           }}
-          color="blue"
+          color={currentColor}
           icon={<RiNotification3Line />}
         ></NavButton>
         <NavButton
@@ -78,7 +81,7 @@ const Navbar = () => {
           customFunc={() => {
             handleClick("chat");
           }}
-          color="blue"
+          color={currentColor}
           icon={<BsChatLeft />}
         ></NavButton>
         <Tooltip
@@ -93,7 +96,7 @@ const Navbar = () => {
             sx={{ marginLeft: "1rem" }}
           />
           <p className="text-gray-400 text-14 font-bold ml-4 "> Привет,</p>
-          <p className="text-gray-600 text-14 font-bold">
+          <p className="text-gray-600 text-14 font-bold  dark:text-gray-200">
             я Константин Караманов!
           </p>
           <MdKeyboardArrowDown className="text-gray-600 text-14 font-bold" />

@@ -12,23 +12,24 @@ import {
   VerticalChart,
 } from "../components";
 import { earningData, sparkLineData, ecomPieChartData } from "../data/dummy";
-import { Divider } from "@mui/material";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerce = () => {
+  const { currentColor } = useStateContext();
   return (
     // Начало доходов и 4 карточек
     <div className="mt-24 ">
       <div className="flex flex-wrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full p-8 pt-9 m-3 bg-bgIm bg-no-repeat bg-cover bg-center ">
-          <div className="flex flex-col justify-between items-center mb-10 ">
-            <div>
+        <div className="bg-white dark:bg-secondary-dark-bg rounded-xl w-full p-8 pt-9 m-3 ">
+          <div className="flex flex-col justify-between items-center rounded-xl p-4 mb-10 bg-bgIm bg-no-repeat bg-cover bg-center ">
+            <div className="">
               <p className="font-bold text-gray-400">Доходы</p>
               <p className="text-2xl">100.000 рублей</p>
             </div>
             <div className="mt-6">
               <Button
                 color="white"
-                bgColor="blue"
+                bgColor={currentColor}
                 text="Загрузить"
                 borderRadius="10px"
                 size="md"
@@ -41,7 +42,7 @@ const Ecommerce = () => {
               <div
                 key={card.title}
                 className="bg-main-bg dark:text-gray-200
-               dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-2xl ;"
+                dark:bg-main-dark-bg md:w-56 p-4 pt-9 rounded-2xl ;"
               >
                 <button
                   type="button"
@@ -49,7 +50,7 @@ const Ecommerce = () => {
                     color: card.iconColor,
                     backgroundColor: card.iconBg,
                   }}
-                  className="text-2xl opacity-1 rounded-full p-4 hover:drop-shadow-xl"
+                  className="text-2xl opacity-1 rounded-full p-4 hover:drop-shadow-xl dark:hover:border"
                 >
                   {card.icon}
                 </button>
@@ -63,31 +64,31 @@ const Ecommerce = () => {
                 </span>
               </div>
             ))}
-          </div>
-          {/*Начало отдела с ростом выручки*/}
-          <div className="flex gap-10 flex-wrap justify-center">
-            <div className="bg-main-bg dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
-              <div className="flex flex-col">
-                <p className="font-semibold text-xl flex gap-2 mb-6">
-                  Рост доходов <AiOutlineArrowUp color="green" />
-                </p>
-                <AreaChart />
+            {/*Начало отдела с ростом выручки*/}
+            <div className="flex gap-10 flex-wrap justify-center">
+              <div className="bg-main-bg  dark:bg-main-dark-bg m-3 p-4 rounded-2xl  ">
+                <div className="flex flex-col">
+                  <p className="font-semibold text-xl flex gap-2 mb-6  dark:text-gray-200">
+                    Рост доходов <AiOutlineArrowUp color="green" />
+                  </p>
+                  <AreaChart />
+                </div>
               </div>
-            </div>
-            <div className="bg-main-bg dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
-              <div className="flex flex-col">
-                <p className="font-semibold text-xl flex gap-2 ">
-                  График полезности
-                </p>
-                <PieChart />
+              <div className="bg-main-bg dark:bg-main-dark-bg m-3 p-4 rounded-2xl  ">
+                <div className="flex flex-col">
+                  <p className="font-semibold text-xl flex gap-2  dark:text-gray-200">
+                    График полезности
+                  </p>
+                  <PieChart />
+                </div>
               </div>
-            </div>
-            <div className="bg-main-bg dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  ">
-              <div className="flex flex-col">
-                <p className="font-semibold text-xl flex gap-2 ">
-                  Сравнение с прошлым годом
-                </p>
-                <VerticalChart />
+              <div className="bg-main-bg dark:bg-main-dark-bg m-3 p-4 rounded-2xl  dark:text-gray-200 ">
+                <div className="flex flex-col">
+                  <p className="font-semibold text-xl flex gap-2 ">
+                    Сравнение с прошлым годом
+                  </p>
+                  <VerticalChart />
+                </div>
               </div>
             </div>
           </div>
