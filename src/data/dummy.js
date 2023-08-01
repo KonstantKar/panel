@@ -511,28 +511,32 @@ export const employeesGrid = [
 
 export const links = [
   {
-    title: "Dashboard",
+    title: "Общее",
     links: [
       {
-        name: "ecommerce",
+        path: "ecommerce",
+        name: "Статистика",
         icon: <FiShoppingBag />,
       },
     ],
   },
 
   {
-    title: "Pages",
+    title: "Страницы",
     links: [
       {
-        name: "orders",
+        path: "orders",
+        name: "Заказы",
         icon: <AiOutlineShoppingCart />,
       },
       {
-        name: "employees",
+        path: "employees",
+        name: "Персонал",
         icon: <IoMdContacts />,
       },
       {
-        name: "customers",
+        path: "customers",
+        name: "Клиенты",
         icon: <RiContactsLine />,
       },
     ],

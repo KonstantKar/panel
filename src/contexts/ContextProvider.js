@@ -28,6 +28,7 @@ export const ContextProvider = ({ children }) => {
 
   //В зависимости от того, на что кликаешь, состояние того свойства и меняется
   const handleClick = (clicked) => {
+    console.log(clicked);
     setIsClicked({ ...initialState, [clicked]: true });
   };
 

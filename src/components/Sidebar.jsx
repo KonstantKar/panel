@@ -59,7 +59,7 @@ const Sidebar = () => {
                 </p>
                 {link.links.map((linkItem) => (
                   <NavLink
-                    to={`/${linkItem.name}`}
+                    to={`/${linkItem.path}`}
                     key={linkItem.name}
                     style={({ isActive }) => ({
                       backgroundColor: isActive ? currentColor : "",

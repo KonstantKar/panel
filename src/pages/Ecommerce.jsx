@@ -18,7 +18,7 @@ const Ecommerce = () => {
   const { currentColor } = useStateContext();
   return (
     // Начало доходов и 4 карточек
-    <div className="mt-24 ">
+    <div>
       <div className="flex flex-wrap justify-center">
         <div className="bg-white dark:bg-secondary-dark-bg rounded-xl w-full p-8 pt-9 m-3 ">
           <div className="flex flex-col justify-between items-center rounded-xl p-4 mb-10 bg-bgIm bg-no-repeat bg-cover bg-center ">
