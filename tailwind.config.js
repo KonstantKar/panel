@@ -41,6 +41,8 @@ module.exports = {
       },
       backgroundImage: {
         bgIm: "url(https://phonoteka.org/uploads/posts/2021-05/1620119976_50-phonoteka_org-p-fon-dlya-nabora-teksta-62.jpg)",
+        prflIm:
+          "url(https://sun9-30.userapi.com/impg/KE2_fqb9QWiuP_KaiILCNyx8UtRSmc9V9_KPvw/WQ1yivc0w9Q.jpg?size=1600x1066&quality=96&sign=e5fec693f7db74fb6b120d72002f08a4&type=album)",
       },
     },
   },

@@ -3,19 +3,8 @@ import "./App.css";
 import { Tooltip } from "@mui/material";
 import { FiSettings } from "react-icons/fi";
 //Мы можем импортировать в одну строку благодаря index.jsx в файле "./components";
-import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
-import {
-  Ecommerce,
-  Orders,
-  Stacked,
-  Pyramid,
-  Area,
-  Bar,
-  Pie,
-  Financial,
-  ColorMapping,
-  Line,
-} from "./pages";
+import { Navbar, Sidebar, ThemeSettings } from "./components";
+import { Ecommerce, Orders, Profile } from "./pages";
 import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
@@ -29,6 +18,7 @@ const App = () => {
   const handleCloseSettings = () => {
     setActiveSettings(!activeSettings);
   };
+
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
@@ -93,6 +83,7 @@ const App = () => {
                   <Route path="/ecommerce" element={<Ecommerce />} />
                   {/*Pages*/}
                   <Route path="/orders" element={<Orders />} />
+                  <Route path="/profile" element={<Profile />} />
                 </Routes>
               </div>
             </div>

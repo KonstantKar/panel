@@ -8,6 +8,7 @@ import { RiNotification3Line } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { Avatar, Tooltip } from "@mui/material";
 import { Cart, Chat, Notification, UserProfile } from "../components";
+import { useNavigate } from "react-router-dom";
 
 const NavButton = ({ title, customFunc, icon, color }) => (
   <Tooltip title={title}>
@@ -34,6 +35,8 @@ const Navbar = () => {
     setActiveSettings,
     currentColor,
   } = useStateContext();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -87,7 +90,7 @@ const Navbar = () => {
         <Tooltip
           title="Профиль"
           onClick={() => {
-            handleClick("userProfile");
+            navigate("/profile");
           }}
           className="flex items-center"
         >
